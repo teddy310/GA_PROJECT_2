@@ -1,4 +1,6 @@
+
 class ProductsController < ApplicationController
+
   def index
     @products = Product.all
   end
@@ -22,7 +24,8 @@ class ProductsController < ApplicationController
   end
 
   def contribute
-    @product = Product.find(params[:id])
+
+    @product = Product.find(params[:id]) #this gets our current product
     @product.contributions.create({user_id: current_user.id})
     @product.save
     redirect_to product_path @product
@@ -45,6 +48,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-  params.require(:product).permit(:title, :description, :price, :image)
+    params.require(:product).permit(:title, :description, :price, :image)
   end
 end
