@@ -3,6 +3,16 @@
 </div>
   <p> <%= @product.price %></p>
 
+
+  <p> <% @product.contributions.each do |c| %></p>
+
+  <p> <%= c.user.first_name %></p>
+
+  <%end%>
+
+
+    <%= link_to "contribute", contribute_path(@product) %>
+
   <%= link_to image_tag(@product.image.url(:med)), @product.image.url %>
 
   <% if @product.user_id == current_user.id %>

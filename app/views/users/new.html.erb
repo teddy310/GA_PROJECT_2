@@ -1,11 +1,19 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-
+<h1>Sign Up</h1>
 <%= form_for @user do |u| %>
+  <% if @user.errors.any? %>
+  <div class="error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% for message in @user.errors.full_messages %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
 
-  <%= u.text_field :first_name, placeholder: "First Name" %><br>
-  <%= u.text_field :last_name, placeholder: "Last Name" %><br>
-  <%= u.text_field :email, placeholder: "Email" %><br>
-  <%= u.password_field :password, placeholder: "Password" %><br>
-  <%= u.submit "Submit" %><br>
+  <div class="form-group"><%= u.text_field :first_name, placeholder: "First Name", :class => "form-control" %><br></div>
+  <div class="form-group"><%= u.text_field :last_name, placeholder: "Last Name", :class => "form-control" %><br></div>
+  <div class="form-group"><%= u.text_field :email, placeholder: "Email", :class => "form-control" %><br></div>
+  <div class="form-group"><%= u.password_field :password_confirmation, placeholder: "Password Confirmation", :class => "form-control" %><br></div>
+  <div class="form-group"><%= u.submit "Submit" %><br>
 <%end%>

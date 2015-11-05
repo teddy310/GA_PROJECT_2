@@ -21,6 +21,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def contribute
+    @product = Product.find(params[:id])
+    @product.contributions.create({user_id: current_user.id})
+    @product.save
+    redirect_to product_path @product
+  end
+
+
   def edit
     @product = Product.find(params[:id])
   end

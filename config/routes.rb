@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'products#index'
 
-  resources :products 
+  resources :products
 
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :create, :destroy]
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'logout' => 'sessions#destroy'
 
-
+  get 'contribute/:id' => 'products#contribute', as: :contribute
 
   resources :users
 

@@ -1,8 +1,8 @@
 <%= form_for @user do |u| %>
 
-<%= u.text_field :first_name, placeholder: "First Name" %><br>
-<%= u.text_field :last_name, placeholder: "Last Name" %><br>
-<%= u.text_field :email, placeholder: "Email" %><br>
-<%= u.password_field :password, placeholder: "Password" %><br>
+<div class="form-group"><%= u.text_field :first_name, placeholder: "First Name", :class => "form-control" %><br></div>
+<div class="form-group"><%= u.text_field :last_name, placeholder: "Last Name", :class => "form-control" %><br></div>
+<div class="form-group"><%= u.text_field :email, placeholder: "Email", :class => "form-control" %><br></div>
+<div class="form-group"><%= u.password_field :password, placeholder: "Password", :class => "form-control" %><br></div>
 <%= u.submit "Submit" %><br>
 <%end%>
