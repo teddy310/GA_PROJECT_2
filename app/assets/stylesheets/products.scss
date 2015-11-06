@@ -1,23 +1,40 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.contribute {
+  .contribute {
   border: 1px solid black;
-}
+  }
 
-body {
-  padding: 100px 0;
+  .intro-header {
   color: #f8f8f8;
-  background: url("banner-bg.jpg") no-repeat center center;
+  background: url("globe-banner.jpg") no-repeat center center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-.intro-header {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    color: #f8f8f8;
+  text-align: center;
   }
   .container-fluid {
 
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  .productpage {
+    text-align: center;
+  }
+
+  .pdescription {
+    border: 1px black solid;
+    width: 350px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .productform {
+    text-align: center;
+  }
+
+  input[type="file"] {
+    margin: 0 auto;
   }

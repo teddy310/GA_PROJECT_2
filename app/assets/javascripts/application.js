@@ -15,3 +15,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+ $("container-fluid").addClass("navbar-header");

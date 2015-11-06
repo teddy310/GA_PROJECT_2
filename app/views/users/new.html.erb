@@ -1,19 +1,27 @@
-<h1>Sign Up</h1>
+<div class="newuser">
+<h1>Create a new account!</h1>
 <%= form_for @user do |u| %>
   <% if @user.errors.any? %>
   <div class="error_messages">
     <h2>Form is invalid</h2>
     <ul>
       <% for message in @user.errors.full_messages %>
-      <li><%= message %></li>
+    <li><%= message %></li>
       <% end %>
     </ul>
   </div>
   <% end %>
 
-  <div class="form-group"><%= u.text_field :first_name, placeholder: "First Name", :class => "form-control" %><br></div>
-  <div class="form-group"><%= u.text_field :last_name, placeholder: "Last Name", :class => "form-control" %><br></div>
-  <div class="form-group"><%= u.text_field :email, placeholder: "Email", :class => "form-control" %><br></div>
-  <div class="form-group"><%= u.password_field :password_confirmation, placeholder: "Password Confirmation", :class => "form-control" %><br></div>
+  <div class="form-group"><%= u.text_field :first_name, placeholder: "First Name"%><br></div>
+
+  <div class="form-group"><%= u.text_field :last_name, placeholder: "Last Name"%><br></div>
+
+  <div class="form-group"><%= u.text_field :email, placeholder: "Email"%><br></div>
+
+  <div class="form-group"><%= u.password_field :password, placeholder: "Password"%><br></div>
+
+  <div class="form-group"><%= u.password_field :password_confirmation, placeholder: "Password Confirmation"%><br></div>
+
   <div class="form-group"><%= u.submit "Submit" %><br>
 <%end%>
+</div>
