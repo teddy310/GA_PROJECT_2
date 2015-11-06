@@ -1,11 +1,16 @@
-<div class="productpage"
+<div class="productpage">
 
-<div class="page-header">
+  <div class="page-header">
 
-  <%= link_to image_tag(@product.image.url(:med)), @product.image.url %>
+    <%= link_to image_tag(@product.image.url(:med)), @product.image.url %>
 
-  <h1><%= @product.title %> <br> Product Description <div class="pdescription"<small> <%= @product.description %> </small> </div> </h1>
-</div>
+    <h1><%= @product.title %> </h1> <br>
+    <h3> Product Description </h3>
+    <div class="pdescription">
+      <h4> <%= @product.description %> </h4>
+    </div>
+
+  </div>
 
   <p style="text-align:center"> $<%= @product.price %></p>
 
@@ -17,6 +22,7 @@
   <%end%>
 
   <% list_of_contributions = Product.find(@product.id).contributions
+
       current_user_id  = current_user.id
       @contributed = false
       size = list_of_contributions.size
